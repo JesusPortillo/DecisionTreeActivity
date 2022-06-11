@@ -13,7 +13,6 @@ data = carseats.data
 
 data["High_sales"] = np.where(data.Sales > 8, 0, 1)
 data = data.drop(columns = "Sales")
-print(data)
 
 shelveLocNormalized = {"Bad":0, "Medium":1, "Good":2}
 urbanNormalized = {"Yes":1, "No":0}
@@ -23,7 +22,7 @@ data["ShelveLoc"] = data["ShelveLoc"].map(shelveLocNormalized)
 data["Urban"] = data["Urban"].map(urbanNormalized)
 data["US"] = data["US"].map(usNormalized) 
 
-features = ["CompPrice", "Income", "Advertising", "Population", "Price", "ShelveLoc", "Age", "Education", "Urban", "US", "High_sales"]
+features = ["CompPrice", "Income", "Advertising", "Population", "Price", "ShelveLoc", "Age", "Education", "Urban", "US"]
 
 x = data[features]
 y = data["High_sales"]
